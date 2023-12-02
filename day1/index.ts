@@ -59,10 +59,10 @@ const findFirstNumber = (val: string, reverse?: "reverse") => {
   return "0";
 };
 
-const result2 = data.map((row) =>
-  "".concat(findFirstNumber(row), findFirstNumber(row, "reverse"))
-);
-let output = 0;
-result2.forEach((val) => (output = output + JSON.parse(val)));
+const result2 = data
+  .map((row) =>
+    "".concat(findFirstNumber(row), findFirstNumber(row, "reverse"))
+  )
+  .reduce((prev, curr) => prev + JSON.parse(curr), 0);
 
-console.log({ output });
+console.log({ result2 });

@@ -56,7 +56,7 @@ const findFirstNumber = (val: string, reverse?: "reverse") => {
       ].toString();
     }
   }
-  return "0";
+  throw new Error("Input error - Did not find a single number in the string");
 };
 
 const result2 = data
